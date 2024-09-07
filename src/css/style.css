@@ -179,3 +179,23 @@ body {
 #carousel-featured .carousel-control-next .fa-chevron-left{
       color: 38px;
 }
+#stor-features{
+    box-shadow: 0 0 15px #EEF0EA;
+    background-image: url(../images/bg_features.png);
+    background-repeat: no-repeat;
+    position: relative;
+    top: -30px;
+    background-size: auto 60%;
+    background-color: #fff;
+    padding-bottom: 35px;
+    padding-top: 25px;
+    background-position: -10px -20px;
+}
+#stor-features .feature img{
+    height: 40px;
+    margin-bottom: 10px;
+}
+#stor-features .feature+.feature{
+    border-right: 1px solid #EEF0EA;
+    
+}
