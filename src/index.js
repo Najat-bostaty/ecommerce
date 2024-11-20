@@ -30,5 +30,36 @@ document.querySelectorAll('.color-option input[type="radio"]').forEach(item =>{
    })
 })
 
+//  حساب سعر إجمالي المنتج        
+
+document.querySelectorAll('[data-product-quantity]').forEach(item => {
+   item.addEventListener('change' , () => {
+      const newquantity = item.value;
+      const parent = item.closest('[data-product-info]');
+      const PricePerUnit = parent.getAttribute('data-product-price');
+      const totalPriceforProduct = newquantity * PricePerUnit
+      parent.querySelector('.total-price-for-product').innerHTML = totalPriceforProduct + "$";
+      
+      CalculateTotalPrice()
+   })
+})
+
+document.querySelectorAll('[data-remove-from-card]').forEach(item => {
+    item.addEventListener('click' , () => {
+        item.closest('[data-product-info]').remove()
+
+        CalculateTotalPrice()
+    })
+})
+function CalculateTotalPrice() {
+   let totalPriceforAllProduct = 0;
+   document.querySelectorAll('[data-product-info]').forEach(product => {
+   const PricePerUnite = product.getAttribute('data-product-price');
+   const quantity = product.querySelector('[data-product-quantity]').value;
+   const totalPriceforProduct = PricePerUnite * quantity
+   totalPriceforAllProduct = totalPriceforAllProduct + totalPriceforProduct;
+   })
+   document.getElementById('total-price-for-all-product').innerHTML = totalPriceforAllProduct + "$";
+}
 
 document.getElementById("copyright").innerHTML = " جميع الحقوق محفوظة للمتجر سنة " + new Date().getFullYear();
