@@ -62,4 +62,60 @@ function CalculateTotalPrice() {
    document.getElementById('total-price-for-all-product').innerHTML = totalPriceforAllProduct + "$";
 }
 
+const   citiesByCountries = {
+   sy: ['دمشق', 'حمص', 'حلب', 'حماة'],
+   eg: ['القاهرة','الاسكندرية'],
+   jo: ['عمان','الزرقاء'],
+   so: ['جدة','الرياض'] 
+}
+
+document.querySelectorAll('select[name="country"]').forEach(item => {
+   item.addEventListener('change', () => {
+      const country = item.value
+
+      const cities = citiesByCountries[country]
+
+      document.querySelectorAll('#payment-cities option').forEach(option => option.remove())
+
+      const firstoption = document.createElement('option')
+      const optiontext = document.createTextNode('اختر المدينة')
+      firstoption.appendChild(optiontext)
+      firstoption.setAttribute('value','')
+      firstoption.setAttribute('disabled','true')
+      firstoption.setAttribute('selected','true')
+
+      const city_option = document.getElementById('payment-cities')
+      city_option.appendChild(firstoption)
+
+      cities.forEach(city => {
+         const newoption = document.createElement('option')
+         const optiontext = document.createTextNode(city)
+         newoption.appendChild(optiontext)
+         newoption.setAttribute('value','city')
+
+         city_option.appendChild(newoption)
+      })
+   })
+})
+
+// إخفاء و اظهار حقول إدخال البطاقة الإئتمانية  
+
+document.querySelectorAll('#form-checkout input[name="payment-method"]').forEach(item => {
+   document.addEventListener('change', () => {
+     const paymentMethod = item.value;
+
+     const creditCardInputs = document.querySelectorAll('#credit-card-info input');
+
+     if(paymentMethod === 'on-delivery'){
+         creditCardInputs.forEach(input => {
+            input.style.display = 'none'
+         })
+     } else {
+      creditCardInputs.forEach(input => {
+         input.style.display ='block'
+      })
+     }
+   })
+})
+
 document.getElementById("copyright").innerHTML = " جميع الحقوق محفوظة للمتجر سنة " + new Date().getFullYear();
