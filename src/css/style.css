@@ -205,7 +205,7 @@ body {
     margin-bottom: 25px;
 }
 .custom-thumnail img{
-    height: 250px;
+    max-height: 250px;
     width: 100%;
     max-width: 250px;
 }
@@ -545,6 +545,60 @@ h1.custom-heading{
     font-size: 18px;
     width: 98%;
 }
+
+/*
+-------------- search page ---------------
+*/
+
+#form-advenced-search{
+    border: 1px solid #EBEBEB;
+    margin-bottom: 35px;
+    height: fit-content;
+}
+#form-advenced-search .panel{
+    border: none;
+    padding: 5px;
+}
+.panel .card-header {
+    background-color: transparent;
+    margin-bottom: 15px;
+    padding-bottom: 13px;    
+}
+.custom-list-group .list-group-item{
+    border: none;
+}
+.custom-list-group{
+  border-bottom: 1px solid #EBEBEB;
+}
+#form-advenced-search label{
+    font-weight: bold;
+    cursor: pointer;
+}
+.custom-pagination .page-link{
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+    border: 1px solid #EBEBEB !important;
+    width: 32px !important;
+    height: 32px !important;
+    color: #C2C2C2;
+    text-decoration: none !important;
+    outline: none !important;
+    transition: all 0.3s ease !important;
+}
+.custom-pagination .page-item.active .page-link{
+    background-color: #f8ad47 !important;
+    color: #fff !important;
+    border-color: #f8ad47 !important;
+
+}
+.custom-pagination .page-link:active,
+.custom-pagination .page-link:hover,
+.custom-pagination .page-link:focus{
+    color: #f8ad47 !important;
+    background-color: #fff !important;
+    border-color: #f8ad47 !important;
+}
+
 @media (max-width: 1399.98px) {  }
 @media (max-width: 1199.98px) { 
     .custom-navbar .navbar-nav li a.nav-link{
@@ -636,6 +690,11 @@ h1.custom-heading{
         line-height: 40px;
         margin: 10px;
         font-size: 20px;
+    }
+    .search-pagination{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
  }
  @media (max-width: 767.98px) { 
