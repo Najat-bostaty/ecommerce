@@ -697,6 +697,9 @@ h1.custom-heading{
         align-items: center;
     }
  }
+ textarea.form-control {
+    min-height: calc(3.5em + .75rem + 2px);
+}
  @media (max-width: 767.98px) { 
     #carousel-featured{
         padding-bottom: 25px;

@@ -92,6 +92,10 @@ module.exports = {
     template: "./src/search.html"
   }),
   new HtmlWebpackPlugin({
+    filename: "contact.html",
+    template: "./src/contact.html"
+  }),
+  new HtmlWebpackPlugin({
     filename: "checkout.html",
     template: "./src/checkout.html"
   }),
